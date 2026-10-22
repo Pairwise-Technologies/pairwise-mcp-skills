@@ -1,0 +1,19 @@
+{
+  "name": "pairwise-mcp-skills",
+  "owner": {
+    "name": "Pairwise",
+    "email": "support@pairwise.ai"
+  },
+  "metadata": {
+    "description": "Connect Claude Code to the Pairwise MCP server, with skills for using it",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "pairwise",
+      "description": "Connects the Pairwise MCP server and adds skills for working with service requests, pipelines, candidates and evaluations in Pairwise.",
+      "source": "./",
+      "strict": false
+    }
+  ]
+}
