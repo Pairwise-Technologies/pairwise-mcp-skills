@@ -167,7 +167,9 @@ Ask your assistant: "Who am I signed in as on Pairwise?" It should answer with y
 
 Skills are short instructions that teach your assistant how to work with Pairwise: which steps to take, which words to use, and how to link back to Pairwise pages. They are optional. Your assistant works without them.
 
-No skills have been published yet. They will be added here one at a time.
+| Skill | What it does |
+|---|---|
+| [`pairwise-mcp`](skills/pairwise-mcp/SKILL.md) | The basics: Pairwise words, the order to look things up in, and links back to Pairwise pages for every service request, candidate and evaluation. |
 
 ### Install the skills
 
