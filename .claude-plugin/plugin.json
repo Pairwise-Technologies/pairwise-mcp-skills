@@ -8,6 +8,13 @@
   },
   "homepage": "https://github.com/Pairwise-Technologies/pairwise-mcp-skills",
   "repository": "https://github.com/Pairwise-Technologies/pairwise-mcp-skills",
+  "privacyPolicyUrl": "https://pairwise.ai/privacy",
+  "icon": "./.claude-plugin/icon.png",
   "license": "MIT",
-  "keywords": ["pairwise", "recruiting", "hiring", "mcp"]
+  "keywords": [
+    "pairwise",
+    "recruiting",
+    "hiring",
+    "mcp"
+  ]
 }

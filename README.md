@@ -180,7 +180,7 @@ Skills are short instructions that teach your assistant how to work with Pairwis
 
 ## Your data
 
-Your assistant can read the hiring data you can see in Pairwise, including candidate information. Follow your company's policy on AI tools.
+Your assistant can read the hiring data you can see in Pairwise, including candidate information. Follow your company's policy on AI tools. See the [Pairwise privacy policy](https://pairwise.ai/privacy).
 
 To disconnect, remove the Pairwise connector from your assistant.
 
