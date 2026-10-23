@@ -4,7 +4,7 @@
 
 Connect your AI assistant to Pairwise, then ask it about your hiring work in plain language.
 
-Pairwise hosts an MCP server for its customers. This repo shows you how to connect your assistant to it. It will also hold optional skills that help your assistant give better answers.
+Pairwise hosts an MCP server for its customers. This repo shows you how to connect your assistant to it. It also holds optional skills that help your assistant give better answers.
 
 ## Who it is for
 
