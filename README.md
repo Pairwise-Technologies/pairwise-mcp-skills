@@ -14,11 +14,12 @@ The Pairwise MCP server is available to Pairwise customers with a registered com
 
 ## What you can ask
 
-Once connected, your assistant sees the same service requests, candidates and evaluations that you see in Pairwise. For example:
+Once connected, your assistant sees the same service requests (or jobs), candidates and evaluations (or interviews) that you see in Pairwise. Use whichever words your team uses. For example:
 
 - "What needs my attention in Pairwise today?"
-- "Give me a pipeline summary for the Data Engineer request."
-- "Who is in Evaluation for that request? Summarize the two strongest candidates."
+- "How is the Data Engineer request going?"
+- "Who is in evaluation for that request? Summarize the two strongest candidates."
+- "How many people have we interviewed for the Product Designer job?"
 - "Show me new feedback from this week."
 
 To create or change something, use the Pairwise web app.
@@ -183,7 +184,7 @@ To disconnect, remove the Pairwise connector from your assistant.
 
 - **The assistant says Pairwise is not connected, or asks you to sign in again.** Sign in again with the steps for your assistant. Sessions expire after a while.
 - **"Your account is not eligible for MCP."** The server is available to Pairwise customers with a registered company account. Contact support if you think your account should have access.
-- **"Permission denied" for a service request or candidate.** Your account cannot see it in the Pairwise web app either. Ask your company's Pairwise admin for access.
+- **"Permission denied" for a service request, job or candidate.** Your account cannot see it in the Pairwise web app either. Ask your company's Pairwise admin for access.
 - **Anything else.** Email [support@pairwise.ai](mailto:support@pairwise.ai) with the name of your assistant, what you asked, and the error text.
 
 ## Contributing

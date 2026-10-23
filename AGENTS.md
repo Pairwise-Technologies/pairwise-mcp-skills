@@ -38,7 +38,8 @@ Never add:
 ## Style
 
 - Plain, short sentences. Second person ("you") in the README.
-- Product words: **service request** (not job), **evaluation** (not interview), **match score**, **pipeline**, **stage**. Never "fraud" (say "authenticity") and never "guest".
+- Product words: Pairwise customers use two sets of words for the same things. Staffing and professional services firms say **service request** and **evaluation**. Companies hiring for themselves say **job** and **interview**. Both are correct. Write services wording by default, and make skills follow the user's wording (see the vocabulary in `skills/pairwise-mcp/SKILL.md`).
+- Other product words: **match score**, **pipeline**, **stage**. Never "fraud" (say "authenticity") and never "guest".
 - No em-dashes. Use commas, periods, colons or hyphens.
 
 ## Changes
