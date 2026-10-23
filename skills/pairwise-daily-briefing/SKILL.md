@@ -2,7 +2,7 @@
 name: pairwise-daily-briefing
 description: >-
   Give a Pairwise user a short briefing on what needs their attention: open
-  service requests with candidates waiting, and recent feedback, offers and
+  service requests and their progress, and recent feedback, offers and
   team changes from their notifications. Use when the user asks "what's new
   in Pairwise?", "what needs my attention today?", or wants a morning or
   weekly hiring summary. Follows the pairwise-mcp skill for words and links.
@@ -32,9 +32,8 @@ Follow the **pairwise-mcp** skill for vocabulary and links.
    - Team changes: the user was added to or removed from a service request.
    - Priority changes on a service request.
 5. **Pick what needs attention.** Name only what the data shows, for example:
-   - Candidates waiting in Decision.
-   - New feedback on a candidate.
    - Offers made.
+   - New feedback on a candidate.
    - A service request whose priority went up.
 6. **Write the briefing** (format below). Keep it short. The user can ask for more.
 
@@ -48,12 +47,13 @@ Follow the **pairwise-mcp** skill for vocabulary and links.
 - <who> on <candidate link> for <service request link>: <one-line gist>
 
 **Open service requests**
-| Service request | Priority | Review | Evaluation | Decision |
+| Service request | Priority | Sourced | Review | In evaluation |
 
 <one line: how many more are open, and draft and on-hold counts>
 ```
 
-- In the table, show pinned service requests and those with candidates in Evaluation or Decision. Show at most 10 rows, and count the rest in the line below.
+- In the table, show pinned service requests and those with candidates in evaluation. Show at most 10 rows, and count the rest in the line below.
+- The dashboard gives one count per stage. For contacted and interested counts on one service request, use the status steps in the pairwise-mcp skill.
 
 - Link each service request to its pipeline, and each candidate to their application. Notifications about a candidate carry both IDs.
 - Quote feedback in one short line. Do not turn a rating into a number the user did not see.
@@ -65,7 +65,8 @@ Follow the **pairwise-mcp** skill for vocabulary and links.
 User: "What needs my attention in Pairwise today?"
 
 > **Needs attention**
-> - [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) is waiting in Decision on [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a).
+> - An offer was made to [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) on [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a).
+> - The client left feedback on [Sam Ortiz](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c?candidate=00000000-0000-0000-0000-00000000000d) for [Account Executive](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c).
 >
 > **Feedback and offers** (last 24 hours)
 > - The client on [Sam Ortiz](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c?candidate=00000000-0000-0000-0000-00000000000d) for [Account Executive](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c): "Strong discovery calls. Wants more depth on pricing."
@@ -73,10 +74,10 @@ User: "What needs my attention in Pairwise today?"
 >
 > **Open service requests**
 >
-> | Service request | Priority | Review | Evaluation | Decision |
+> | Service request | Priority | Sourced | Review | In evaluation |
 > |---|---|---|---|---|
-> | [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) | High | 63 | 4 | 1 |
-> | [Account Executive](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c) | Mid | 18 | 2 | 0 |
+> | [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) | High | 1,204 | 63 | 4 |
+> | [Account Executive](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c) | Mid | 410 | 18 | 2 |
 >
 > 3 more service requests are open. 2 are in draft and 1 is on hold.
 
