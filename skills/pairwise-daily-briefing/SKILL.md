@@ -14,7 +14,7 @@ description: >-
 
 **When not to use:** A deep look at one service request (use pairwise-pipeline-review).
 
-Follow the **pairwise-mcp** skill for vocabulary and links.
+Follow the **pairwise-mcp** skill for wording (service request or job, evaluation or interview), links and client visibility. The examples here use services wording.
 
 ## Inputs
 
