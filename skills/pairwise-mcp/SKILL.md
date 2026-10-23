@@ -32,8 +32,20 @@ description: >-
 | Evaluation | Interview | One assessment of a candidate. Data and IDs use the "interview" form. Write "evaluation" to the user. |
 | Application | | One candidate on one service request. |
 | Pipeline | | The candidates on one service request, by stage. |
-| Stage | | Sourcing, Review, Evaluation, Decision. Decision also has Hold and Rejected. |
 | Match score | | Pairwise's fit percentage for a candidate on a service request. Show it as a whole percent (86%). |
+
+## Pipeline stages
+
+The pipeline has four stages. Each candidate is also at one step inside their stage:
+
+| Stage | Steps | What it means |
+|---|---|---|
+| Sourcing | Applied, AI recommended, Added | Candidates found for the role, not yet contacted. |
+| Review | Shortlist, Contacted, Interested | Outreach: shortlisted, contacted, then confirmed interest. |
+| Evaluation | Evaluating, Evaluations completed | Candidates going through evaluations. |
+| Decision | Pending offer, Offer, Not interested, Hold | Where a candidate ends up. Rejected candidates are counted separately. |
+
+Decision is an end point, not a queue. Do not treat it as "waiting for a decision", and do not lead with it.
 
 ## Order of lookups
 
@@ -45,6 +57,17 @@ Start broad, then narrow:
 4. **One application.** Open full detail only for the few candidates the user asks about.
 
 Pipelines can be large. Early stages may hold thousands of candidates. Do not page through a whole stage. Narrow it first (search text, match score range, location, application date), and tell the user how many candidates there are and how many you read.
+
+## Status of a service request
+
+When the user asks how a service request is going, give the numbers a recruiter tracks:
+
+1. **Sourced:** the Sourcing count.
+2. **Contacted** and **Interested:** list Review with each candidate's step, and count the steps. Mention Shortlist only if the user asks. If Review holds more than about 500 candidates, give the Review total and offer to count the steps.
+3. **In evaluation:** the Evaluation count.
+4. **Offers, on hold, rejected:** count offers from the Decision list, and get the on-hold and rejected counts separately. The pipeline summary's Decision count leaves out on-hold and rejected candidates.
+
+Leave out any number that is zero. Do not list stage names for their own sake.
 
 ## Links
 
@@ -77,12 +100,23 @@ Some companies hire for a client and share candidates with that client. Pairwise
 User: "How is the Data Engineer request going?"
 
 1. Find the service request titled Data Engineer. One match.
-2. Get its pipeline summary: Sourcing 1,204, Review 63, Evaluation 4, Decision 1.
-3. List the Decision stage with application IDs: one candidate, Jordan Lee.
+2. Get its pipeline summary: Sourcing 1,204, Review 63, Evaluation 4.
+3. List Review with each candidate's step: 30 Shortlist, 21 Contacted, 12 Interested.
+4. Get the on-hold and rejected counts: 0 on hold, 41 rejected. The Decision list has no offers.
 
 Answer:
 
-> [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) has 1,204 candidates in Sourcing, 63 in Review, 4 in Evaluation and 1 in Decision. [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) is waiting in Decision.
+> [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) so far:
+>
+> - 1,204 candidates sourced
+> - 21 contacted
+> - 12 interested
+> - 4 in evaluation, including [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b)
+> - 41 rejected
+>
+> Want the list of interested candidates?
+
+On hold and offers are left out because they are zero.
 
 ## Connection problems
 
