@@ -46,12 +46,23 @@ If your assistant does not offer custom connectors, your plan or your workspace 
 
 ### Claude Code
 
+Install the Pairwise plugin. It connects the server and adds the [skills](#skills) in one step:
+
+```bash
+claude plugin marketplace add Pairwise-Technologies/pairwise-mcp-skills
+claude plugin install pairwise@pairwise-mcp-skills
+```
+
+Then run `/mcp` in Claude Code, select `pairwise`, and sign in. Approve access in your browser.
+
+To connect the server without the skills, add it directly instead:
+
 ```bash
 claude mcp add --transport http pairwise https://mcp.pairwise.ai/mcp
 claude mcp login pairwise
 ```
 
-The login opens Pairwise in your browser. Approve access. To check, run `claude mcp list`: `pairwise` shows as connected.
+Use one way, not both, or Pairwise shows up twice. To check, run `claude mcp list`: `pairwise` shows as connected.
 
 Guide: [Connect Claude Code to tools via MCP](https://code.claude.com/docs/en/mcp)
 
@@ -156,6 +167,11 @@ Ask your assistant: "Who am I signed in as on Pairwise?" It should answer with y
 Skills are short instructions that teach your assistant how to work with Pairwise: which steps to take, which words to use, and how to link back to Pairwise pages. They are optional. Your assistant works without them.
 
 No skills have been published yet. They will be added here one at a time.
+
+### Install the skills
+
+- **Claude Code:** the [Pairwise plugin](#claude-code) installs all skills.
+- **Other assistants:** copy the folders under [`skills/`](skills/) into your assistant's skills folder. Each folder is one skill in the [Agent Skills](https://agentskills.io/) format.
 
 ## Your data
 

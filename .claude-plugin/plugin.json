@@ -1,0 +1,13 @@
+{
+  "name": "pairwise",
+  "version": "0.1.0",
+  "description": "Connects the Pairwise MCP server and adds skills for working with service requests, pipelines, candidates and evaluations in Pairwise.",
+  "author": {
+    "name": "Pairwise",
+    "email": "support@pairwise.ai"
+  },
+  "homepage": "https://github.com/Pairwise-Technologies/pairwise-mcp-skills",
+  "repository": "https://github.com/Pairwise-Technologies/pairwise-mcp-skills",
+  "license": "MIT",
+  "keywords": ["pairwise", "recruiting", "hiring", "mcp"]
+}

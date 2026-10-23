@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pairwise": {
+      "type": "http",
+      "url": "https://mcp.pairwise.ai/mcp"
+    }
+  }
+}
