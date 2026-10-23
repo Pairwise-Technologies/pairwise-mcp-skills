@@ -58,23 +58,25 @@ Follow the **pairwise-mcp** skill for vocabulary and links.
 - Link each service request to its pipeline, and each candidate to their application. Notifications about a candidate carry both IDs.
 - Quote feedback in one short line. Do not turn a rating into a number the user did not see.
 - Client feedback may show a reviewer with no real name. Call them "the client".
+- Mark team and leadership feedback **(internal)**, as the pairwise-mcp skill says. If the user wants the briefing for a client, leave it out.
 
 ## Worked synthetic example
 
 User: "What needs my attention in Pairwise today?"
 
 > **Needs attention**
-> - [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) is waiting in Decision on [Senior Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a).
+> - [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) is waiting in Decision on [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a).
 >
 > **Feedback and offers** (last 24 hours)
-> - The client on [Sam Ortiz](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c?candidate=00000000-0000-0000-0000-00000000000d) for [Field Applications Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c): "Strong on customer demos, wants more depth on firmware."
+> - The client on [Sam Ortiz](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c?candidate=00000000-0000-0000-0000-00000000000d) for [Account Executive](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c): "Strong discovery calls. Wants more depth on pricing."
+> - The team (internal) on [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) for [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a): "Clear on streaming design. Check salary range."
 >
 > **Open service requests**
 >
 > | Service request | Priority | Review | Evaluation | Decision |
 > |---|---|---|---|---|
-> | [Senior Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) | High | 63 | 4 | 1 |
-> | [Field Applications Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c) | Mid | 18 | 2 | 0 |
+> | [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) | High | 63 | 4 | 1 |
+> | [Account Executive](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000c) | Mid | 18 | 2 | 0 |
 >
 > 3 more service requests are open. 2 are in draft and 1 is on hold.
 
