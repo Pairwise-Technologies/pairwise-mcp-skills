@@ -1,3 +1,5 @@
+<img src="assets/pairwise-icon.svg" width="48" alt="Pairwise">
+
 # Pairwise MCP skills
 
 Connect your AI assistant to Pairwise, then ask it about your hiring work in plain language.
@@ -12,11 +14,12 @@ The Pairwise MCP server is available to Pairwise customers with a registered com
 
 ## What you can ask
 
-Once connected, your assistant sees the same service requests, candidates and evaluations that you see in Pairwise. For example:
+Once connected, your assistant sees the same service requests (or jobs), candidates and evaluations (or interviews) that you see in Pairwise. Use whichever words your team uses. For example:
 
 - "What needs my attention in Pairwise today?"
-- "Give me a pipeline summary for the Senior Data Engineer request."
-- "Who is in Evaluation for that request? Summarize the two strongest candidates."
+- "How is the Data Engineer request going?"
+- "Who is in evaluation for that request? Summarize the two strongest candidates."
+- "How many people have we interviewed for the Product Designer job?"
 - "Show me new feedback from this week."
 
 To create or change something, use the Pairwise web app.
@@ -31,66 +34,126 @@ https://mcp.pairwise.ai/mcp
 
 Every assistant connects the same way: add the server URL, then sign in with your Pairwise account when asked. You do not need an API key.
 
-Supported assistants:
+If your assistant does not offer custom connectors, your plan or your workspace admin may need to allow them. Each section links to the assistant's own guide.
 
 - [Claude Code](#claude-code)
 - [Claude (claude.ai and Claude Desktop)](#claude-claudeai-and-claude-desktop)
 - [ChatGPT](#chatgpt)
 - [Codex](#codex)
 - [Cursor](#cursor)
-- [Grok and Grok Bot](#grok-and-grok-bot)
+- [Grok](#grok)
+- [Grok Bot](#grok-bot)
 - [Other assistants](#other-assistants)
 
 ### Claude Code
+
+Install the Pairwise plugin. It connects the server and adds the [skills](#skills) in one step:
+
+```bash
+claude plugin marketplace add Pairwise-Technologies/pairwise-mcp-skills
+claude plugin install pairwise@pairwise-mcp-skills
+```
+
+Then run `/mcp` in Claude Code, select `pairwise`, and sign in. Approve access in your browser.
+
+To connect the server without the skills, add it directly instead:
 
 ```bash
 claude mcp add --transport http pairwise https://mcp.pairwise.ai/mcp
 claude mcp login pairwise
 ```
 
-The login opens Pairwise in your browser. Approve access, then run `/mcp` in Claude Code to check that `pairwise` shows as connected.
+Use one way, not both, or Pairwise shows up twice. To check, run `claude mcp list`: `pairwise` shows as connected.
+
+Guide: [Connect Claude Code to tools via MCP](https://code.claude.com/docs/en/mcp)
 
 ### Claude (claude.ai and Claude Desktop)
 
-1. Open **Settings > Connectors**.
-2. Select **Add custom connector**.
-3. Enter the name `Pairwise` and the server URL.
-4. Select **Connect**, then sign in to Pairwise and approve access.
+1. Open **Customize > Connectors**.
+2. Select **+ Add**, then **Add custom connector**.
+3. Enter the name `Pairwise` and the server URL, then select **Continue**.
+4. Keep the suggested sign-in settings and select **Add**.
+5. Select **Connect**, sign in to Pairwise, and approve access.
+
+**Team and Enterprise:** an owner adds Pairwise first, under **Organization settings > Connectors**. Then each person selects **Connect** on Pairwise under **Customize > Connectors**.
+
+Guide: [Getting started with custom connectors](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
 ### ChatGPT
 
-1. In ChatGPT settings, create a custom connector with the server URL.
-2. Leave the OAuth client ID and client secret empty.
-3. Sign in to Pairwise and approve access.
+1. Open **Plugins** (chatgpt.com/plugins).
+2. Select **+**, then **Add custom MCP server**.
+3. Enter the name `Pairwise` and the server URL.
+4. Choose **OAuth** for authentication. Leave the client ID and client secret empty.
+5. Create the plugin, install it, then select **Connect**, sign in to Pairwise, and approve access.
 
-If you do not see an option to add a custom connector, your ChatGPT plan or workspace admin may need to turn it on.
+To use it, type **@** in a chat and choose Pairwise.
+
+**Business, Enterprise and Edu:** your workspace admin may need to add Pairwise, or give you permission to add it.
+
+Guide: [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
 
 ### Codex
+
+In the terminal:
 
 ```bash
 codex mcp add pairwise --url https://mcp.pairwise.ai/mcp
 codex mcp login pairwise
 ```
 
+In the Codex IDE extension or app:
+
+1. Open **Settings > MCP servers > Add server**.
+2. Enter the name `pairwise`, choose **Streamable HTTP**, and enter the server URL.
+3. Save, select **Restart**, then **Authenticate**, and sign in to Pairwise.
+
+To check, run `codex mcp list`, or `/mcp` in Codex.
+
+Guide: [Model Context Protocol in Codex](https://learn.chatgpt.com/docs/extend/mcp)
+
 ### Cursor
 
-Add Pairwise to `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (one project):
+1. Add Pairwise to `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (one project):
 
-```json
-{
-  "mcpServers": {
-    "pairwise": {
-      "url": "https://mcp.pairwise.ai/mcp"
-    }
-  }
-}
-```
+   ```json
+   {
+     "mcpServers": {
+       "pairwise": {
+         "url": "https://mcp.pairwise.ai/mcp"
+       }
+     }
+   }
+   ```
 
-Then open Cursor's MCP settings and sign in to `pairwise`.
+2. Open **Customize > MCPs** and select **Authenticate** next to `pairwise`.
+3. Sign in to Pairwise and approve access.
 
-### Grok and Grok Bot
+**Teams and Enterprise:** your admin may need to allow Pairwise first.
 
-Add a custom connector (MCP server) with the server URL, then sign in to Pairwise and approve access.
+Guide: [Model Context Protocol in Cursor](https://cursor.com/docs/context/mcp)
+
+### Grok
+
+1. Open **grok.com/connectors**.
+2. Select **New Connector**, then **Custom**.
+3. Enter the server URL, sign in to Pairwise, and approve access.
+
+**Business and Enterprise:** a team admin adds Pairwise first.
+
+Guide: [Grok connectors](https://docs.x.ai/grok/connectors)
+
+### Grok Bot
+
+Ask your bot in chat:
+
+> Add the MCP server https://mcp.pairwise.ai/mcp
+
+Then sign in to Pairwise when the bot sends you a link.
+
+**Team bots:** an owner or manager adds Pairwise under **Setup > Plugins** as a custom remote MCP server. Each person signs in once.
+
+Guide: [Team bots](https://docs.x.ai/grok-bot/team-bots)
 
 ### Other assistants
 
@@ -104,7 +167,16 @@ Ask your assistant: "Who am I signed in as on Pairwise?" It should answer with y
 
 Skills are short instructions that teach your assistant how to work with Pairwise: which steps to take, which words to use, and how to link back to Pairwise pages. They are optional. Your assistant works without them.
 
-No skills have been published yet. They will be added here one at a time.
+| Skill | What it does |
+|---|---|
+| [`pairwise-daily-briefing`](skills/pairwise-daily-briefing/SKILL.md) | A short briefing on what needs your attention: new feedback and offers, and the progress of your open service requests. |
+| [`pairwise-mcp`](skills/pairwise-mcp/SKILL.md) | The basics: Pairwise words, the order to look things up in, and links back to Pairwise pages for every service request, candidate and evaluation. |
+| [`pairwise-recruiting-pipeline-review`](skills/pairwise-recruiting-pipeline-review/SKILL.md) | A status view of one service request: how many candidates are sourced, contacted, interested and in evaluation, and which evaluations wait for feedback. |
+
+### Install the skills
+
+- **Claude Code:** the [Pairwise plugin](#claude-code) installs all skills.
+- **Other assistants:** copy the folders under [`skills/`](skills/) into your assistant's skills folder. Each folder is one skill in the [Agent Skills](https://agentskills.io/) format.
 
 ## Your data
 
@@ -116,13 +188,15 @@ To disconnect, remove the Pairwise connector from your assistant.
 
 - **The assistant says Pairwise is not connected, or asks you to sign in again.** Sign in again with the steps for your assistant. Sessions expire after a while.
 - **"Your account is not eligible for MCP."** The server is available to Pairwise customers with a registered company account. Contact support if you think your account should have access.
-- **"Permission denied" for a service request or candidate.** Your account cannot see it in the Pairwise web app either. Ask your company's Pairwise admin for access.
+- **"Permission denied" for a service request, job or candidate.** Your account cannot see it in the Pairwise web app either. Ask your company's Pairwise admin for access.
 - **Anything else.** Email [support@pairwise.ai](mailto:support@pairwise.ai) with the name of your assistant, what you asked, and the error text.
 
 ## Contributing
 
-Suggestions and fixes are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Suggestions and fixes are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). To report a security issue, see [SECURITY.md](SECURITY.md).
 
 ## License
 
 [MIT](LICENSE). Copyright (c) 2026 Pairwise.
+
+The license covers the content of this repo only. It grants no rights to the Pairwise name or logo.

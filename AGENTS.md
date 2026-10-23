@@ -21,7 +21,7 @@ Do not create `.cursor/skills` or `.claude/skills` duplicates.
 
 ## Naming
 
-Every skill name starts with `pairwise-`, then runs from least specific to most specific. See `docs/SKILL_NAMING.md`.
+Every skill name starts with `pairwise-`, then a group (`recruiting`, `interviewing`, `delivery`, `domain`) unless the skill is a basic every user needs. See `docs/SKILL_NAMING.md`.
 
 ## What may go in this repo
 
@@ -38,7 +38,8 @@ Never add:
 ## Style
 
 - Plain, short sentences. Second person ("you") in the README.
-- Product words: **service request** (not job), **evaluation** (not interview), **match score**, **pipeline**, **stage**. Never "fraud" (say "authenticity") and never "guest".
+- Product words: Pairwise customers use two sets of words for the same things. Staffing and professional services firms say **service request** and **evaluation**. Companies hiring for themselves say **job** and **interview**. Both are correct. Write services wording by default, and make skills follow the user's wording (see the vocabulary in `skills/pairwise-mcp/SKILL.md`).
+- Other product words: **match score**, **pipeline**, **stage**. Never "fraud" (say "authenticity") and never "guest".
 - No em-dashes. Use commas, periods, colons or hyphens.
 
 ## Changes
@@ -46,3 +47,4 @@ Never add:
 - One skill per PR. Check it against `docs/QUALITY_BAR.md` before you open the PR.
 - Add each new skill to the **Skills** section of `README.md`.
 - Pairwise maintainers review every PR (`.github/CODEOWNERS`).
+- PR descriptions and commit messages are public. Follow "Pull request descriptions" in `CONTRIBUTING.md`.

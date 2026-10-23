@@ -1,0 +1,16 @@
+{
+  "name": "pairwise-mcp-skills",
+  "owner": {
+    "name": "Pairwise",
+    "email": "support@pairwise.ai"
+  },
+  "metadata": {
+    "description": "Connect Claude Code to the Pairwise MCP server, with skills for using it"
+  },
+  "plugins": [
+    {
+      "name": "pairwise",
+      "source": "./"
+    }
+  ]
+}
