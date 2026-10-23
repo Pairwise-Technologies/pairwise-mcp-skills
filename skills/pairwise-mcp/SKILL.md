@@ -2,17 +2,18 @@
 name: pairwise-mcp
 description: >-
   Work with Pairwise hiring data through the Pairwise MCP server: service
-  requests, pipelines, candidates, applications and evaluations. Covers
-  Pairwise vocabulary, the order to look things up in, how to link every
+  requests (jobs), pipelines, candidates, applications and evaluations
+  (interviews). Covers Pairwise vocabulary and when to use services or
+  internal hiring wording, the order to look things up in, how to link every
   service request, candidate and evaluation back to its Pairwise page, and
   what to do when the connection fails. Use for any task that mentions
-  Pairwise, a service request, a pipeline or an evaluation, and before the
-  other pairwise-* skills.
+  Pairwise, a service request or job, a pipeline, or an evaluation or
+  interview, and before the other pairwise-* skills.
 ---
 
 # pairwise-mcp
 
-**When to use:** The user asks about anything in Pairwise: their service requests, a pipeline, a candidate, an evaluation, feedback or notifications.
+**When to use:** The user asks about anything in Pairwise: their service requests or jobs, a pipeline, a candidate, an evaluation or interview, feedback or notifications.
 
 ## Core rules
 
@@ -26,13 +27,32 @@ description: >-
 
 ## Vocabulary
 
-| Pairwise users say | Also called | Notes |
-|---|---|---|
-| Service request | Job | One role to fill. Data and IDs use the "job" form. Write "service request" to the user. |
-| Evaluation | Interview | One assessment of a candidate. Data and IDs use the "interview" form. Write "evaluation" to the user. |
-| Application | | One candidate on one service request. |
-| Pipeline | | The candidates on one service request, by stage. |
-| Match score | | Pairwise's fit percentage for a candidate on a service request. Show it as a whole percent (86%). |
+Pairwise serves two kinds of hiring teams, and each has its own words for the same things. Both sets are correct.
+
+| Concept | Services wording (default) | Internal hiring wording | In Pairwise data |
+|---|---|---|---|
+| A role to fill | Service request ("request" for short) | Job | job |
+| One assessment of a candidate | Evaluation | Interview, or evaluation | interview |
+| The person who assesses | Evaluator | Interviewer | interviewer |
+| One candidate on one role | Application | Application | application |
+| The candidates on one role, by stage | Pipeline | Pipeline | pipeline |
+| Pairwise's fit percentage for a candidate on a role | Match score | Match score | score |
+
+Show match scores as a whole percent (86%).
+
+### Which words to use
+
+- **Services wording is the default.** Staffing, recruiting and professional services firms hire for their clients, and they say "service request" and "evaluation".
+- **Switch to internal wording when there is evidence** that the company hires for itself:
+  - The user says "job", "interview", "role", "req" or "headcount".
+  - The user talks about their own team ("our engineering team", "we are hiring").
+  - No clients appear anywhere: no client feedback, nothing shared with a client.
+- **Stay with services wording** when the user mentions a client, client feedback, or sharing candidates with a client.
+- **Mirror the user.** If the user uses one word, answer with the same word. Never correct the user's word.
+- **Stay consistent.** Once you choose, use the same words for the rest of the conversation, unless the user switches.
+- **Pairwise data does not tell you which kind of company it is.** Its fields always use the job and interview names. Choose by the evidence above.
+
+The rest of this skill, and the other pairwise-* skills, use services wording. Swap in internal wording when you have chosen it.
 
 ## Pipeline stages
 
@@ -58,7 +78,7 @@ Start broad, then narrow:
 
 Pipelines can be large. Early stages may hold thousands of candidates. Do not page through a whole stage. Narrow it first (search text, match score range, location, application date), and tell the user how many candidates there are and how many you read.
 
-## Status of a service request
+## Status of a service request or job
 
 When the user asks how a service request is going, give the numbers a recruiter tracks:
 
@@ -117,6 +137,14 @@ Answer:
 > Want the list of interested candidates?
 
 On hold and offers are left out because they are zero.
+
+### Internal hiring wording
+
+User: "How many people have we interviewed for the Product Designer job?"
+
+The user says "job" and "we", so answer in internal hiring wording:
+
+> On the [Product Designer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000f) job, 6 candidates have finished their interviews and 3 more are interviewing now.
 
 ## Connection problems
 
