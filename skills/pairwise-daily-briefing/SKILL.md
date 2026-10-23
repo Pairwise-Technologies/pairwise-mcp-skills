@@ -12,7 +12,7 @@ description: >-
 
 **When to use:** The user wants a quick view of their Pairwise work, for today or for a period they name.
 
-**When not to use:** A deep look at one service request (use pairwise-pipeline-review).
+**When not to use:** A deep look at one service request (use pairwise-recruiting-pipeline-review).
 
 Follow the **pairwise-mcp** skill for wording (service request or job, evaluation or interview), links and client visibility. The examples here use services wording.
 

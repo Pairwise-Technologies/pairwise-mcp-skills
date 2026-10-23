@@ -1,5 +1,5 @@
 ---
-name: pairwise-pipeline-review
+name: pairwise-recruiting-pipeline-review
 description: >-
   Review one Pairwise service request's pipeline: candidate counts per stage,
   who is in Evaluation and Decision, where evaluations stand, and what is
@@ -8,7 +8,7 @@ description: >-
   pipeline link. Follows the pairwise-mcp skill for words and links.
 ---
 
-# pairwise-pipeline-review
+# pairwise-recruiting-pipeline-review
 
 **When to use:** The user wants a status view of one service request's pipeline, or of one stage in it.
 
@@ -51,19 +51,21 @@ Sourcing <n> · Review <n> · Evaluation <n> · Decision <n>
 - Link each candidate to their application, and each evaluation to its page.
 - "Latest evaluation" is the type, status and verdict, for example "Technical, complete, Yes".
 - Keep the note to one line, drawn from team notes or evaluations. Write "No notes" when there are none.
+- Mark each note or evaluation that is not shared with the client **(internal)**, as the pairwise-mcp skill says.
+- If the user wants the review for a client, list only candidates shared with the client, quote only shared notes and evaluations, and say that you left the rest out.
 
 ## Worked synthetic example
 
-User: "Who is in Decision on the Senior Data Engineer request?"
+User: "Who is in Decision on the Data Engineer request?"
 
-> **[Senior Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a)**: open, High priority
+> **[Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a)**: open, High priority
 > Sourcing 1,204 · Review 63 · Evaluation 4 · Decision 1
 >
 > **Decision**
 >
 > | Candidate | Match score | Latest evaluation | Note |
 > |---|---|---|---|
-> | [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) | 88% | Technical, complete, Yes | Team: "Strong on streaming pipelines." |
+> | [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) | 88% | Technical, complete, Yes | Team (internal): "Strong on streaming pipelines." |
 >
 > **Waiting on someone**
 > - [Screening for Riley Chen](https://app.pairwise.ai/portal/jobs/pipeline/interview/00000000-0000-0000-0000-00000000000e) has waited for feedback from the evaluator since Oct 13.
@@ -85,3 +87,4 @@ User: "Who is in Decision on the Senior Data Engineer request?"
 - Never repeat a candidate's email, phone number or other contact details unless the user asks.
 - Never present a candidate as a hire or a reject. Suggest next steps; people decide.
 - Never invent notes, verdicts or dates.
+- Never put internal notes or evaluations in an answer meant for a client.
