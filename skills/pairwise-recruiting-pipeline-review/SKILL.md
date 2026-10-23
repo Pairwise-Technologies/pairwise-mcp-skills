@@ -1,10 +1,11 @@
 ---
 name: pairwise-recruiting-pipeline-review
 description: >-
-  Review one Pairwise service request's pipeline: how many candidates are
-  sourced, contacted, interested and in evaluation, where evaluations stand,
-  and what is waiting on someone. Use when the user asks "how is the <role>
-  request going?", "who is in evaluation?", "what is stuck?", or pastes a
+  Review the pipeline of one Pairwise service request or job: how many
+  candidates are sourced, contacted, interested and in evaluation, where
+  evaluations or interviews stand, and what is waiting on someone. Use when
+  the user asks "how is the <role> request (or job) going?", "who is in
+  evaluation?", "who is interviewing?", "what is stuck?", or pastes a
   Pairwise pipeline link. Follows the pairwise-mcp skill for words and links.
 ---
 
@@ -14,7 +15,7 @@ description: >-
 
 **When not to use:** A summary across all service requests (use pairwise-daily-briefing).
 
-Follow the **pairwise-mcp** skill for vocabulary and links.
+Follow the **pairwise-mcp** skill for wording (service request or job, evaluation or interview), links and client visibility. The examples here use services wording.
 
 ## Inputs
 
