@@ -1,11 +1,11 @@
 ---
 name: pairwise-recruiting-pipeline-review
 description: >-
-  Review one Pairwise service request's pipeline: candidate counts per stage,
-  who is in Evaluation and Decision, where evaluations stand, and what is
-  waiting on someone. Use when the user asks "how is the <role> request
-  going?", "who is in Decision?", "what is stuck?", or pastes a Pairwise
-  pipeline link. Follows the pairwise-mcp skill for words and links.
+  Review one Pairwise service request's pipeline: how many candidates are
+  sourced, contacted, interested and in evaluation, where evaluations stand,
+  and what is waiting on someone. Use when the user asks "how is the <role>
+  request going?", "who is in evaluation?", "what is stuck?", or pastes a
+  Pairwise pipeline link. Follows the pairwise-mcp skill for words and links.
 ---
 
 # pairwise-recruiting-pipeline-review
@@ -25,20 +25,20 @@ Follow the **pairwise-mcp** skill for vocabulary and links.
 
 1. **Find the service request.** Use the ID from a pasted link, or match the title. If more than one matches, ask which one.
 2. **Read the service request** for context: title, status, priority.
-3. **Get the pipeline summary:** the count per stage.
-4. **Choose the focus stage.** If the user did not name one, review **Decision** and **Evaluation**. They are the smallest stages and the closest to a hire. Look at Review or Sourcing only when asked, and narrow those first (search text, match score range, location, application date).
-5. **List the candidates** in the focus stage, with their application IDs and match scores.
+3. **Get the status numbers:** sourced, contacted, interested, in evaluation, and any offers, on hold or rejected. Follow "Status of a service request" in the pairwise-mcp skill.
+4. **Choose the focus.** If the user did not name one, focus on candidates **in evaluation**, then **interested** candidates. They are the closest to a hire. Look at Sourcing or the rest of Review only when asked, and narrow those first (search text, match score range, location, application date).
+5. **List the candidates** in focus, with their application IDs and match scores.
 6. **Check the evaluations** for the service request: which are scheduled, which wait for feedback, and which are complete with the evaluator's verdict.
-7. **Open full detail** only for the candidates the user asks about, or for those in Decision, up to 5. Detail shows the stage, team notes and each evaluation.
+7. **Open full detail** only for the candidates the user asks about, or for those in evaluation, up to 5. Detail shows the step, team notes and each evaluation.
 8. **Write the review** (format below).
 
 ## Output
 
 ```
 **<service request link>**: <status>, <priority> priority
-Sourcing <n> · Review <n> · Evaluation <n> · Decision <n>
+<n> sourced · <n> contacted · <n> interested · <n> in evaluation · <offers, on hold, rejected, if not zero>
 
-**<Focus stage>**
+**<Focus, for example "In evaluation">**
 | Candidate | Match score | Latest evaluation | Note |
 
 **Waiting on someone**
@@ -56,23 +56,27 @@ Sourcing <n> · Review <n> · Evaluation <n> · Decision <n>
 
 ## Worked synthetic example
 
-User: "Who is in Decision on the Data Engineer request?"
+User: "How is the Data Engineer request going?"
 
 > **[Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a)**: open, High priority
-> Sourcing 1,204 · Review 63 · Evaluation 4 · Decision 1
+> 1,204 sourced · 21 contacted · 12 interested · 4 in evaluation · 41 rejected
 >
-> **Decision**
+> **In evaluation**
 >
 > | Candidate | Match score | Latest evaluation | Note |
 > |---|---|---|---|
 > | [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) | 88% | Technical, complete, Yes | Team (internal): "Strong on streaming pipelines." |
+> | [Riley Chen](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000c) | 81% | Screening, awaiting feedback | No notes |
+>
+> 2 more candidates are in evaluation. Want them listed too?
 >
 > **Waiting on someone**
 > - [Screening for Riley Chen](https://app.pairwise.ai/portal/jobs/pipeline/interview/00000000-0000-0000-0000-00000000000e) has waited for feedback from the evaluator since Oct 13.
 >
 > **Suggested next steps** (in Pairwise)
-> - Decide on Jordan Lee.
+> - Review Jordan Lee's completed evaluations with the team.
 > - Remind the evaluator about Riley Chen's screening.
+> - Follow up with the 12 interested candidates.
 
 ## Failure modes
 
