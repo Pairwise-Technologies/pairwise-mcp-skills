@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 18 18">
+  <title>Pairwise</title>
+  <style>
+    .mark { fill: #111111; }
+    @media (prefers-color-scheme: dark) { .mark { fill: #ffffff; } }
+  </style>
+  <g transform="translate(-66.682 -114.74)">
+    <g class="mark" transform="matrix(.26458 0 0 .26458 -348.75 225.52)">
+      <path d="m1570.2-418.67v50.585h28.906v-21.679h21.679v-28.906h-36.132z"/>
+      <rect transform="rotate(-90)" x="353.99" y="1613.5" width="21.316" height="21.316"/>
+    </g>
+  </g>
+</svg>

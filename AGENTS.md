@@ -21,7 +21,7 @@ Do not create `.cursor/skills` or `.claude/skills` duplicates.
 
 ## Naming
 
-Every skill name starts with `pairwise-`, then runs from least specific to most specific. See `docs/SKILL_NAMING.md`.
+Every skill name starts with `pairwise-`, then a group (`recruiting`, `interviewing`, `delivery`, `domain`) unless the skill is a basic every user needs. See `docs/SKILL_NAMING.md`.
 
 ## What may go in this repo
 
@@ -46,3 +46,4 @@ Never add:
 - One skill per PR. Check it against `docs/QUALITY_BAR.md` before you open the PR.
 - Add each new skill to the **Skills** section of `README.md`.
 - Pairwise maintainers review every PR (`.github/CODEOWNERS`).
+- PR descriptions and commit messages are public. Follow "Pull request descriptions" in `CONTRIBUTING.md`.
