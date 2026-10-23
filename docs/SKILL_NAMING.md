@@ -19,7 +19,7 @@ This keeps all Pairwise skills together in a sorted skill list, and keeps each g
 | (none) | Basics every user needs | `pairwise-mcp`, `pairwise-daily-briefing` |
 | `recruiting` | Finding and assessing candidates for a service request or job | `pairwise-recruiting-pipeline-review` |
 | `interviewing` | Evaluations: scheduling, feedback and review | `pairwise-interviewing-screen-review` |
-| `delivery` | Running service requests or jobs across a team or for a client | `pairwise-delivery-briefing` |
+| `delivery` | Running service requests or jobs across a team or for a client | `pairwise-delivery-client-roles-summary` |
 | `domain` | Field knowledge that other skills load, no task of its own | `pairwise-domain-engineering-hardware` |
 
 Put a skill in a group when it serves that workflow. Leave the group out only for basics that every Pairwise user needs.
