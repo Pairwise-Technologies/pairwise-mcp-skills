@@ -171,6 +171,7 @@ Skills are short instructions that teach your assistant how to work with Pairwis
 |---|---|
 | [`pairwise-daily-briefing`](skills/pairwise-daily-briefing/SKILL.md) | A short briefing on what needs your attention: new feedback and offers, and the progress of your open service requests. |
 | [`pairwise-mcp`](skills/pairwise-mcp/SKILL.md) | The basics: Pairwise words, the order to look things up in, and links back to Pairwise pages for every service request, candidate and evaluation. |
+| [`pairwise-recruiting-pipeline-review`](skills/pairwise-recruiting-pipeline-review/SKILL.md) | A status view of one service request: how many candidates are sourced, contacted, interested and in evaluation, and which evaluations wait for feedback. |
 
 ### Install the skills
 
