@@ -22,6 +22,7 @@ description: >-
 4. **People decide.** Summaries, comparisons and match scores help the hiring team. They are not hiring decisions.
 5. **Keep candidate data where it is.** Do not copy candidate data into other tools, files or services unless the user asks for that.
 6. **Link everything.** See [Links](#links).
+7. **Respect what the client can see.** See [Client visibility](#client-visibility).
 
 ## Vocabulary
 
@@ -63,17 +64,25 @@ Which candidate link to use:
 
 The application link needs the **application ID**, even though the URL says `candidate=`. A candidate ID in that slot opens the pipeline without the candidate.
 
+## Client visibility
+
+Some companies hire for a client and share candidates with that client. Pairwise marks three things as shared with the client or not: each application, each feedback note, and each evaluation's scorecard.
+
+- When you quote a note or an evaluation that is not shared with the client, mark it **(internal)**.
+- If the user says the answer is for a client, include only shared applications, shared notes and shared evaluations. Tell the user that you left the rest out.
+- Notifications do not say whether feedback is shared. Treat team and leadership feedback in notifications as internal.
+
 ## Worked synthetic example
 
-User: "How is the Senior Data Engineer request going?"
+User: "How is the Data Engineer request going?"
 
-1. Find the service request titled Senior Data Engineer. One match.
+1. Find the service request titled Data Engineer. One match.
 2. Get its pipeline summary: Sourcing 1,204, Review 63, Evaluation 4, Decision 1.
 3. List the Decision stage with application IDs: one candidate, Jordan Lee.
 
 Answer:
 
-> [Senior Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) has 1,204 candidates in Sourcing, 63 in Review, 4 in Evaluation and 1 in Decision. [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) is waiting in Decision.
+> [Data Engineer](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a) has 1,204 candidates in Sourcing, 63 in Review, 4 in Evaluation and 1 in Decision. [Jordan Lee](https://app.pairwise.ai/portal/jobs/pipeline/00000000-0000-0000-0000-00000000000a?candidate=00000000-0000-0000-0000-00000000000b) is waiting in Decision.
 
 ## Connection problems
 
