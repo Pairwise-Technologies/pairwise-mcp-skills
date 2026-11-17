@@ -23,7 +23,7 @@ Follow the **pairwise-mcp** skill for wording (service request or job, evaluatio
 
 ## Procedure
 
-1. **Dashboard.** Get the user's dashboard: their open service requests with candidate counts per stage, pinned ones first, plus how many are in draft or on hold.
+1. **Open service requests.** Search for the user's open service requests, with candidate counts per stage on each row. Pinned ones come first. Search on draft and on hold too, and use each search's total for those counts.
 2. **Notifications.** Get the newest notifications. Load more pages only until the items are older than the time window, and stop after about 100 items.
 3. **Drop the user's own actions.** Items the user did themselves are not news to them.
 4. **Group the notifications:**
@@ -53,7 +53,7 @@ Follow the **pairwise-mcp** skill for wording (service request or job, evaluatio
 ```
 
 - In the table, show pinned service requests and those with candidates in evaluation. Show at most 10 rows, and count the rest in the line below.
-- The dashboard gives one count per stage. For contacted and interested counts on one service request, use the status steps in the pairwise-mcp skill.
+- Each service request's row gives a count for every stage, including zeros. Add shortlisted, contacted and interested together for the Review column.
 
 - Link each service request to its pipeline, and each candidate to their application. Notifications about a candidate carry both IDs.
 - Quote feedback in one short line. Do not turn a rating into a number the user did not see.
@@ -84,8 +84,8 @@ User: "What needs my attention in Pairwise today?"
 ## Failure modes
 
 - **"New" is not "unread here".** Pairwise marks notifications new until the user opens them in the web app. Reading them through the assistant does not change that, so the same items can show as new on every briefing. Use the time window, not the "new" flag.
-- **On-hold service requests** appear only as a count on the dashboard. Look them up by name if the user asks.
-- **Empty dashboard:** the user may have no open service requests, or no access to any. Say so and suggest they check the web app.
+- **On-hold service requests** appear only as a count from the search. Look them up by name if the user asks.
+- **No open service requests:** the user may have no open service requests, or no access to any. Say so and suggest they check the web app.
 - **Too much to show:** summarize counts per group and list only the top items.
 
 ## Don'ts
