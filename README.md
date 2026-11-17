@@ -1,4 +1,4 @@
-<img src="assets/pairwise-icon.svg" width="48" alt="Pairwise">
+<img src=".claude-plugin/icon.png" width="48" alt="Pairwise">
 
 # Pairwise MCP skills
 
