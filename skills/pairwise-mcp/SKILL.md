@@ -57,16 +57,16 @@ The rest of this skill, and the other pairwise-* skills, use services wording. S
 
 ## Pipeline stages
 
-The web app's board groups each candidate into one of four stages, each with its own steps:
+The web app's board groups candidates into four stages. Pairwise data counts the same candidates with its own names:
 
-| Stage | Steps | What it means |
+| Board stage | Steps on the board | Names in Pairwise data |
 |---|---|---|
-| Sourcing | Applied, AI recommended, Added | Candidates found for the role, not yet contacted. |
-| Review | Shortlist, Contacted, Interested | Outreach: shortlisted, contacted, then confirmed interest. |
-| Evaluation | Evaluating, Evaluations completed | Candidates going through evaluations. |
-| Decision | Pending offer, Offer, Not interested, Hold | Where a candidate ends up. |
+| Sourcing | Applied, AI recommended, Added | sourced |
+| Review | Shortlist, Contacted, Interested | shortlisted, contacted, interested |
+| Evaluation | Evaluating, Evaluations completed | evaluating |
+| Decision | Pending offer, Offer, Not interested, Hold, Rejected | offer (still in progress); hired, hold, declined, rejected, removed (outcomes) |
 
-The pipeline summary reports the same candidates with its own names, always including zero counts. Still in progress: sourced, shortlisted, contacted, interested, evaluating, offer. No longer active: hired, hold, declined (the candidate said no), rejected (the team said no), removed (a duplicate or ineligible entry). These counts ignore any filters set on the board.
+Declined means the candidate said no. Rejected means the team said no, at any stage. Removed means a duplicate or ineligible entry, not a rejection. The pipeline summary always includes zero counts, and its counts ignore any filters set on the board.
 
 An outcome is an end point, not a queue. Do not treat it as "waiting for a decision", and do not lead with it.
 
@@ -76,10 +76,10 @@ Start broad, then narrow:
 
 1. **Find the service request.** Search by title text, and narrow by status, priority, location, publish date, or just the ones you are on the team of, if more than one comes back. Open its full record (status, priority, company or client, locations, salary range, description, recruiting guidance, hiring team, active candidate count) for context.
 2. **Pipeline summary.** Get the count per stage and per outcome before you list candidates.
-3. **One stage.** List candidates in the stage the user cares about. Each row carries the candidate's application ID, so you can link to it.
+3. **One stage.** List candidates in the stages the user cares about. Each row carries the candidate's application ID, so you can link to it, and the date the candidate was shared with the client, if they were. By default only candidates still in progress are listed. Name an outcome (for example hired or rejected) to see those.
 4. **One application.** Open full detail only for the few candidates the user asks about.
 
-Searching for a service request and listing candidates are both paged. Pipelines can be large: early stages may hold thousands of candidates. Do not page through more than two pages of either. Narrow the search instead (for a service request: title text, status, priority, location, publish date; for candidates: search text, location, match score range, years of experience, or when added to the pipeline), and tell the user the total and how many you read. The total already gives you the count, so a search result's total can answer a counting question on its own.
+Searching for a service request and listing candidates are both paged. Pipelines can be large: early stages may hold thousands of candidates. Do not page through more than two pages of either. Narrow the search instead (for a service request: title text, status, priority, location, publish date; for candidates: search text, location, match score range, years of experience, when added to the pipeline, or when shared with the client), and tell the user the total and how many you read. The total already gives you the count, so a search result's total can answer a counting question on its own.
 
 ## Status of a service request or job
 
@@ -114,7 +114,7 @@ The application link needs the **application ID**, even though the URL says `can
 Some companies hire for a client and share candidates with that client. Pairwise marks three things as shared with the client or not: each application, each feedback note, and each evaluation's scorecard.
 
 - When you quote a note or an evaluation that is not shared with the client, mark it **(internal)**.
-- If the user says the answer is for a client, include only shared applications, shared notes and shared evaluations. Tell the user that you left the rest out.
+- If the user says the answer is for a client, include only shared applications, shared notes and shared evaluations. Tell the user that you left the rest out. The candidate list can show only candidates shared with the client, and gives the date each was shared.
 - Notifications do not say whether feedback is shared. Treat team and leadership feedback in notifications as internal.
 
 ## Worked synthetic example
